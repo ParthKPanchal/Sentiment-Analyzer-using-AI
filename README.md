@@ -11,6 +11,9 @@ Step 4: Run your App locally
 cd '.\Sentiment Analyzer\'
 python app.py
 
-Step 5:Open the project
+Step 5: Open the project
 You will get a URL copy and paste it in Browser
 something like this http://127.0.0.1:7860
+
+Step 5: Create a requirements.txt File
+requirements.txt
