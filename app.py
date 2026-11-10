@@ -1,11 +1,16 @@
+import spaces
 import gradio as gr
 from transformers import pipeline
 
 # Load the AI Model
-model = pipeline("sentiment-analysis")
+model = pipeline("sentiment-analysis", device=0)
 
 # This function runs when the user clicks Submit
+@spaces.GPU
 def analyze_sentiment(text):
+    if not text.strip():
+        return "Please enter a sentence!"
+    
     result = model(text)[0]
     label = result['label']
     score = round(result['score']*100,2)
